@@ -19,7 +19,7 @@ build() {
   OPA_VERSION=$(echo "$tag" | cut -c2-)
   docker build --no-cache --build-arg OPA_VERSION="${OPA_VERSION}" -t ${IMAGE}:"${tag}" .
 
-  if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  if [[ "$GITHUB_REF" == "refs/heads/master" ]]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
     docker push ${IMAGE}:"${tag}"
 
@@ -73,7 +73,7 @@ if [  "$(echo "$digest" | jq -r ".message")" == "null" ]; then
   fi
 fi
 
-if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == false ]]; then
+if [[ "$GITHUB_REF" == "refs/heads/master" && "$GITHUB_EVENT_NAME" != "pull_request" ]]; then
   echo "Update latest image to ${latest}"
 
   docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"

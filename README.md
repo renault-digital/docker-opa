@@ -1,6 +1,6 @@
 # opa
 
-[![Build Status](https://travis-ci.com/renault-digital/docker-opa.svg?branch=master)](https://travis-ci.com/renault-digital/docker-opa)
+![Github Action Badge](https://github.com/renault-digital/docker-opa/workflows/.github/workflows/dockerimage.yml/badge.svg)
 
 Auto-trigger docker build for [open policy agent](https://www.openpolicyagent.org/) when new release is announced. This image enables usage with gitlab-ci
 
@@ -16,9 +16,9 @@ Please avoid to use `latest` tag for any production deployment. Tag with right v
 
 https://github.com/renault-digital/docker-opa
 
-### Daily Travis CI build logs
+### Daily Github Action CI build logs
 
-https://travis-ci.org/renault-digital/opa
+https://github.com/renault-digital/docker-opa/actions
 
 ### Docker image tags
 
@@ -38,7 +38,7 @@ https://hub.docker.com/r/renaultdigital/opa/tags/
     alias opa="docker run -ti --rm -v $(pwd):/apps -w /apps \
         renaultdigital/opa"
     opa --help
-    
+
     # example in ~/.bash_profile
     alias opa='docker run -ti --rm -v $(pwd):/apps -w /apps \
         renaultdigital/opa'
@@ -49,7 +49,7 @@ Mostly it is used during CI/CD (continuous integration and continuous delivery) 
 
 # The Processes to build this image
 
-* Enable Travis CI cronjob on this repo to run build daily on master branch
+* Enable GITHUB ACTION CI on this repo to run build daily on master branch
 * Check if there are new tags/releases announced via Github REST API
 * Match the exist docker image tags via Hub.docker.io REST API
 * If not matched, build the image with release version and push to https://hub.docker.com/

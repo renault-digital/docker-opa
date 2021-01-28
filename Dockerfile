@@ -11,7 +11,7 @@ ENV OPA_SOURCE="https://openpolicyagent.org/downloads/${OPA_VERSION}/opa_linux_a
 RUN apk add --update --no-cache git curl ca-certificates && rm -f /var/cache/apk/* && \
     curl -L ${OPA_SOURCE} --output /usr/bin/opa && \
     chmod +x /usr/bin/opa && \
-    adduser opa -u 1001 -D 
+    adduser opa -u 1001 -D
 
 WORKDIR /apps
 

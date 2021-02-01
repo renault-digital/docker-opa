@@ -1,6 +1,7 @@
 # opa
 
-![Github Action Badge](https://github.com/renault-digital/docker-opa/workflows/.github/workflows/dockerimage.yml/badge.svg)
+![Docker Image CI Push](https://github.com/renault-digital/docker-opa/workflows/Docker%20Image%20CI%20Push/badge.svg)
+![Docker Image Trivy](https://github.com/renault-digital/docker-opa/workflows/Docker%20Image%20Trivy/badge.svg)
 
 Auto-trigger docker build for [open policy agent](https://www.openpolicyagent.org/) when new release is announced. This image enables usage with gitlab-ci
 

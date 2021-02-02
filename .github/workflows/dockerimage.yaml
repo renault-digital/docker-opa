@@ -16,9 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: list dir
-        run: ls -la
-
       - name: build image
         env:
           DOCKER_BUILDKIT: 1
